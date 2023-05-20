@@ -1,3 +1,4 @@
+from .CashFlow import CashFlow
 
 class FixedAccount(object):
     def __init__(
@@ -11,12 +12,12 @@ class FixedAccount(object):
         ) -> None:
         
         self.name = name
-        self.mothly_amount = monthly_amount
+        self.monthly_amount = monthly_amount
         self.start_t = start_t
         self.end_t = end_t
         self.taxable = taxable
         self.option_group = option_group
-        self.cash_flows = generate_cash_flows()
+        self.cash_flows = self.generate_cash_flows()
 
     def generate_cash_flows(self):
         return [CashFlow(amount=self.monthly_amount, t=t, account=self) for t in range(self.start_t, self.end_t)]
