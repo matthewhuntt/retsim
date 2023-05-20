@@ -1,0 +1,16 @@
+[build-system]
+requires = ["poetry-core>=1.1.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry]
+name = "retsim"
+version = "0.1.0"
+description = "Retirement simulation tool"
+authors = ["mhuntt"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+# Add your project dependencies here
+
+[tool.poetry.dev-dependencies]
+# Add your development dependencies here
