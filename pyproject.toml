@@ -1,5 +1,5 @@
 [build-system]
-requires = ["poetry-core>=1.1.0"]
+requires = ["poetry-core>=1.1.0", "pandas"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.poetry]
@@ -11,6 +11,7 @@ authors = ["mhuntt"]
 [tool.poetry.dependencies]
 python = "^3.8"
 # Add your project dependencies here
+pandas = "^2.0.1"
 
 [tool.poetry.dev-dependencies]
 # Add your development dependencies here

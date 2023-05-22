@@ -13,6 +13,9 @@ class Alternative(object):
         self.accounts = accounts
         self.aggregate_cash_flows = self.get_aggregate_cash_flows()
 
+    def generate_accounts(self):
+        pass
+
     def get_aggregate_cash_flows(self):
         aggregate_cash_flows = []
         for account in self.accounts:
