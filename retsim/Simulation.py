@@ -26,7 +26,7 @@ class Simulation(object):
         self.variable_accounts_filepath = os.path.join(self.inputs_folderpath, self.variable_accounts_filename)
         self.retirees_filepath = os.path.join(self.inputs_folderpath, self.retirees_filename)
 
-        self.fixed_accounts = self.init_fixed_accounts()
+        #self.fixed_accounts = self.init_fixed_accounts()
         
         self.accounts_matrix = self.generate_accounts_matrix()
         self.retirees_matrix = self.generate_retirees_matrix()
@@ -36,15 +36,14 @@ class Simulation(object):
         return FixedAccount(
             name=account_row['name'],
             monthly_amount=account_row['monthly_amount'],
-            start_date=date(account_row['start_date']),
-            
+            start_date=date(account_row['start_date'])
         )
     
     def init_fixed_accounts(self):
         with open(self.fixed_accounts_filepath) as f:
             fixed_accounts_df = pd.read_csv(f)
         
-        return [self.init_fixed_account(account) for account in fixed_accounts_df.iterrows()]
+        return [self.init_fixed_account(account) for (i, account) in fixed_accounts_df.iterrows()]
 
     def generate_accounts_matrix(self):
         
