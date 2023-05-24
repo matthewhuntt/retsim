@@ -32,7 +32,6 @@ class FixedAccount(object):
         #self.cash_flows = self.generate_cash_flows()
 
     def calculate_start_t(self):
-        print("start date: {}".format(self.start_date))
         if self.start_date == '<retirement_t>':
             return self.alt.retirement_t_dict[self.retiree_id]
         elif self.start_date == '<today>':
@@ -43,7 +42,6 @@ class FixedAccount(object):
             return (datetime.strptime(self.start_date, "%m/%d/%Y").date() - date.today()).days
     
     def calculate_end_t(self):
-        print("end date: {}".format(self.end_date))
         if self.end_date == '<retirement_t>':
             return self.alt.retirement_t_dict[self.retiree_id]
         elif math.isnan(self.end_date):
