@@ -7,17 +7,24 @@ class Alternative(object):
     def __init__(
             self,
             sim,
-            retirement_t_dict,
+            retirees,
         ) -> None:
         
         self.sim = sim
-        self.retirement_t_dict = retirement_t_dict
+        self.retirees = retirees
+        self.retirees_dict = self.create_retirees_dict()
 
         self.fixed_accounts = self.init_fixed_accounts()
         self.variable_accounts = self.init_variable_accounts()
         self.accounts = self.fixed_accounts + self.variable_accounts
 
         self.aggregate_cash_flows = self.get_aggregate_cash_flows()
+
+    def create_retirees_dict(self):
+        retirees_dict = {}
+        for retiree in self.retirees:
+            retirees_dict[retiree.id] = retiree
+        return retirees_dict
 
     def generate_accounts(self):
         pass
